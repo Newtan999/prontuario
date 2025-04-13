@@ -1,0 +1,15 @@
+{% extends 'consultas/base.html' %}
+
+{% block titulo %}
+  Cadastrar Consulta
+{% endblock %}
+
+{% block conteudo %}
+  <h1>Cadastro de Consulta</h1>
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Salvar</button>
+  </form>
+  <p><a href="{% url 'consultas:listar_consultas' %}">Ver lista de consultas</a></p>
+{% endblock %}

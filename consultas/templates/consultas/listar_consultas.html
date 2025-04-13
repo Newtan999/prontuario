@@ -1,0 +1,23 @@
+{% extends 'consultas/base.html' %}
+
+{% block titulo %}
+  Lista de Consultas
+{% endblock %}
+
+{% block conteudo %}
+  <h1>Lista de Consultas</h1>
+
+  <a href="{% url 'consultas:criar_consulta' %}">Cadastrar nova consulta</a>
+
+  <ul>
+    {% for consulta in consultas %}
+      <li>
+        <strong>Paciente:</strong> {{ consulta.nome_paciente }} <br>
+        <strong>Data:</strong> {{ consulta.data }} <br>
+        <strong>Profissional:</strong> {{ consulta.profissional_responsavel }}
+      </li>
+    {% empty %}
+      <li>Nenhuma consulta cadastrada ainda.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
