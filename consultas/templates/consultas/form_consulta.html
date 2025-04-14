@@ -12,4 +12,7 @@
       <button type="submit">Salvar</button>
   </form>
   <p><a href="{% url 'consultas:listar_consultas' %}">Ver lista de consultas</a></p>
+  <h1>Cadastro de Pacientes</h1>
+  {{ form.paciente }}
+  <a href="{% url 'cadastrar_paciente' %}" target="_blank">Cadastrar novo paciente</a>
 {% endblock %}
