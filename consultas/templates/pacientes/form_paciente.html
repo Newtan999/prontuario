@@ -1,0 +1,14 @@
+{% extends 'consultas/base.html' %}
+
+{% block titulo %}
+    Cadastar Paciente
+{% endblock %}
+
+{%block conteudo %}
+    <h1>Cadastro de Paciente</h1>
+    <form method="post">
+        { %crsf_token %}
+        {{ form.as_p }}
+        <button type = "submit">Salvar</button>
+    </form>
+{%endblock}
