@@ -8,11 +8,23 @@
   <h1>Cadastro de Consulta</h1>
   <form method="post">
       {% csrf_token %}
-      {{ form.as_p }}
+
+      <p>
+        {{ form.paciente.label_tag }} {{ form.paciente }}
+        <a href="{% url 'cadastrar_paciente' %}" target="_blank" style="margin-left: 10px;">
+          Cadastrar novo Paciente
+        </a>
+      </p>
+
+      <p>
+        {{ form.data_consulta.label_tag }} {{ form.data_consulta }}<br>
+        {{ form.hora_consulta.label_tag }} {{ form.hora_consulta }}<br>
+        {{ form.observacoes.label_tag }} {{ form.observacoes }}<br>
+      </p>
+
       <button type="submit">Salvar</button>
   </form>
+
   <p><a href="{% url 'consultas:listar_consultas' %}">Ver lista de consultas</a></p>
-  <h1>Cadastro de Pacientes</h1>
-  {{ form.paciente }}
-  <a href="{% url 'cadastrar_paciente' %}" target="_blank">Cadastrar novo paciente</a>
-{% endblock %}
+
+  {% endblock %}
