@@ -1,0 +1,24 @@
+{% extends 'consultas/base.html' %}
+
+{% block titulo %}
+    Lista de Pacientes
+{% endblock %}
+
+{%block conteudo %}
+    <h1>Lista de Pacientes</h1>
+
+    <a href="{% url 'pacientes:cadastrar_paciente' %}">Cadastrar novo paciente</a>
+
+    <ul>
+        {% for paciente in pacientes %}
+        <li>
+            <strong>Nome: </strong> {{paciente.nome}} <br>
+            <strong>Data de Nascimento: </strong> {{paciente.data_nascimento}} <br>
+            <strong>Telefone: </strong> {{paciente.telefone}} <br>
+            <strong>Endereço: </strong> {{paciente.endereco}}
+        </li>
+        {% empty %}
+            <li>Nenhum paciente cadastrado ainda</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
