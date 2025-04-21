@@ -5,20 +5,24 @@
 {% endblock %}
 
 {%block conteudo %}
-    <h1>Lista de Pacientes</h1>
+    <h2>Lista de Pacientes</h2>
 
-    <a href="{% url 'pacientes:cadastrar_paciente' %}">Cadastrar novo paciente</a>
+    <div class="btn-container">
+        <a href="{% url 'pacientes:cadastrar_paciente' %}"  class="btn">+ Novo </a>
+    </div>
 
     <ul>
         {% for paciente in pacientes %}
-        <li>
-            <strong>Nome: </strong> {{paciente.nome}} <br>
-            <strong>Data de Nascimento: </strong> {{paciente.data_nascimento}} <br>
-            <strong>Telefone: </strong> {{paciente.telefone}} <br>
-            <strong>Endereço: </strong> {{paciente.endereco}}
-        </li>
-        {% empty %}
-            <li>Nenhum paciente cadastrado ainda</li>
-        {% endfor %}
+       <div class="card">
+            <li>
+                <strong>Nome: </strong> {{paciente.nome}} <br>
+                <strong>Data de Nascimento: </strong> {{paciente.data_nascimento}} <br>
+                <strong>Telefone: </strong> {{paciente.telefone}} <br>
+                <strong>Endereço: </strong> {{paciente.endereco}}
+            </li>
+            {% empty %}
+                <li>Nenhum paciente cadastrado ainda</li>
+            {% endfor %}
+        </div>
     </ul>
 {% endblock %}

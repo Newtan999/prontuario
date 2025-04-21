@@ -6,18 +6,20 @@
 
 {% block conteudo %}
   <h1>Lista de Consultas</h1>
+  
+  <div class="btn-container">
+    <a href="{% url 'consultas:criar_consulta' %}" class='btn'> + Nova</a>
+  </div>
 
-  <a href="{% url 'consultas:criar_consulta' %}">Cadastrar nova consulta</a>
-
-  <ul>
+  {% if consultas %}
     {% for consulta in consultas %}
-      <li>
-        <strong>Paciente:</strong> {{ consulta.nome_paciente }} <br>
-        <strong>Data:</strong> {{ consulta.data }} <br>
-        <strong>Profissional:</strong> {{ consulta.profissional_responsavel }}
-      </li>
-    {% empty %}
-      <li>Nenhuma consulta cadastrada ainda.</li>
+      <div class="card">
+        <p><strong>Paciente:</strong> {{ consulta.nome_paciente }}</p>
+        <p><strong>Data:</strong> {{ consulta.data }}</p>
+        <p><strong>Profissional:</strong> {{ consulta.profissional_responsavel }}</p>
+      </div>
     {% endfor %}
-  </ul>
+  {% else %}
+    <p>Nenhuma consulta cadastrada.</p>
+  {% endif %}
 {% endblock %}

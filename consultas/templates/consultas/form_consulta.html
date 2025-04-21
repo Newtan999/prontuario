@@ -1,3 +1,4 @@
+{% load static}
 {% extends 'consultas/base.html' %}
 
 {% block titulo %}
@@ -11,7 +12,7 @@
 
       <p>
         {{ form.paciente.label_tag }} {{ form.paciente }}
-        <a href="{% url 'cadastrar_paciente' %}" target="_blank" style="margin-left: 10px;">
+        <a href="{% url 'cadastrar_paciente' %}" target="_blank" style="margin-left: 10px;"> <!-- no referrer? -->
           Cadastrar novo Paciente
         </a>
       </p>
@@ -25,6 +26,6 @@
       <button type="submit">Salvar</button>
   </form>
 
-  <p><a href="{% url 'consultas:listar_consultas' %}">Ver lista de consultas</a></p>
+  <p><a href="{% url 'consultas:listar_consultas' %}">Visualizar consultas</a></p>
 
   {% endblock %}
