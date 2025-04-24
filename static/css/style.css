@@ -26,14 +26,15 @@ body {
 }
 
 .card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 600px;
-    transition: transform 0.2s;
+    background-color: white;
+    padding: 16px;
+    margin: 12px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    width: 400px; /* Reduz a largura */
+    text-align: left;
 }
+
 
 .card:hover {
     transform: scale(1.02);
@@ -68,8 +69,8 @@ body {
 }
 
 .btn-container {
-    text-align: right; /* Ou 'center' se quiser centralizar */
-    margin: 20px auto;
+    text-align: left;
+    margin: 12px;
     max-width: 600px; /* Mesmo valor do card para manter harmonia */
 }
 
