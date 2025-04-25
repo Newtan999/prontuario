@@ -12,7 +12,7 @@
 
       <p>
         {{ form.paciente.label_tag }} {{ form.paciente }}
-        <a href="{% url 'cadastrar_paciente' %}" target="_blank" style="margin-left: 10px;"> <!-- no referrer? -->
+        <a href="{% url 'pacientes:cadastrar_paciente' %}" target="_blank" style="margin-left: 10px;"> <!-- no referrer? -->
           Cadastrar novo Paciente
         </a>
       </p>
