@@ -15,3 +15,6 @@ def cadastrar_paciente(request):
 def listar_pacientes(request): #nome "listar_pacientes" padronizado
     pacientes = Pacientes.objects.all()
     return render(request, 'pacientes/listar_pacientes.html', {'pacientes': pacientes})
+
+def editar_pacientes(request):
+    

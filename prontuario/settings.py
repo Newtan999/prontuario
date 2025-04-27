@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'pacientes',
     'prontuario',
     'consultas',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

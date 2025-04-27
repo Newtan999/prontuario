@@ -3,7 +3,7 @@ from pacientes.models import Pacientes
 
 class Consulta(models.Model):
     paciente = models.ForeignKey(Pacientes, on_delete=models.PROTECT)
-    data = models.DateTimeField(auto_now_add=True)
+    data = models.DateTimeField()
     motivo = models.TextField(blank=True)
     evolucao = models.TextField()
     prescricao = models.TextField()
